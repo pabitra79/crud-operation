@@ -28,7 +28,7 @@ class createStudent {
       const data = new studentmodel({ name, email, password, phone });
       const newdata = await data.save();
       if (newdata) {
-        res.redirect("/get-student");
+        res.redirect("/");
       } else {
         res.redirect("/add-student");
       }
@@ -60,7 +60,7 @@ class createStudent {
         phone,
       });
       if (updatedata) {
-        res.redirect("/get-student");
+        res.redirect("/");
       } else {
         res.redirect(`/edit/student/${id}`);
       }
@@ -73,7 +73,7 @@ class createStudent {
       const id = req.params.id;
       const data = await studentmodel.findByIdAndDelete(id);
       if (data) {
-        res.redirect("/get-student");
+        res.redirect("/");
       } else {
         console.log("data is not deleted");
       }
