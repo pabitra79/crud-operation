@@ -15,7 +15,7 @@ app.set("views", "views");
 
 app.use(express.static("public"));
 
-app.use(studentrouter);
+app.use("/", studentrouter);
 
 app.listen(3001, () => {
   console.log("server port 3001 ");
